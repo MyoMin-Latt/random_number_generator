@@ -14,3 +14,16 @@ class RandomizerChangeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+class CheckboxChangeNotifier extends ChangeNotifier {
+  final List<bool> checkboxState = [false, false, false];
+
+  void changeCheckboxState(int index) {
+    checkboxState[index] = !checkboxState[index];
+    notifyListeners();
+  }
+
+  void printCheckboxTrue() {
+    print(checkboxState.indexOf(true));
+  }
+}
